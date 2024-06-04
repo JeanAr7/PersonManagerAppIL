@@ -1,27 +1,17 @@
-﻿namespace PersonManagerApp
+﻿using System.Security.Principal;
+
+namespace PersonManagerApp
 {
     internal class Program
     {
+        private static PersonCommands _commands;
+
         static void Main(string[] args)
         {
-            var persons = File.ReadAllLines("data.csv")
-                .Select(l => l.Split(","))
-                .Select(p => new Person
-                {
-                    Id = int.Parse(p[0]),
-                    Name = p[1],
-                    Age = int.Parse(p[2]),
-                })
-                .ToList();
+            _commands = new PersonCommands();
 
-            var adults = persons.Where(p => p.Age >= 18).ToList();
-            Console.WriteLine($"### ADULTS ({adults.Count}) ###");
-            adults.ForEach(a => Console.WriteLine(a.Name));
-
-
-            var children = persons.Where(p => p.Age < 18).ToList();
-            Console.WriteLine($"### CHILDREN ({children.Count}) ###");
-            children.ForEach(c => Console.WriteLine(c.Name));
+            _commands.DisplayAllAdults();
+            _commands.DisplayAllChildren();
         }
     }
 }
