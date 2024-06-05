@@ -3,6 +3,7 @@
 internal class PersonCommands
 {
     private IPersonManager _imanager;
+    
     public PersonCommands(IPersonManager imanager)
     {
         _imanager = imanager;
