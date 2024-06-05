@@ -1,4 +1,6 @@
-﻿namespace PersonManagerApp;
+﻿using PersonManagerApp.DataClasses;
+
+namespace PersonManagerApp;
 
 class PersonManager
 {
@@ -8,6 +10,11 @@ class PersonManager
     {
         _repository = new PersonRepository();
     }
+
+    //public Person Copy(Person person)
+    //{
+    //    return person;
+    //}
 
     public IQueryable<Person> GetAllAdults()
     {

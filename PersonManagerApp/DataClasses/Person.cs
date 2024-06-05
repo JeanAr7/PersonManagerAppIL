@@ -1,4 +1,4 @@
-﻿namespace PersonManagerApp;
+﻿namespace PersonManagerApp.DataClasses;
 
 class Person
 {

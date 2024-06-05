@@ -10,17 +10,20 @@
       <Field Name="_commands" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="PersonManagerApp.PersonCommands" Collapsed="true">
-    <Position X="6.25" Y="1.5" Width="1.5" />
+  <Class Name="PersonManagerApp.PersonCommands">
+    <Position X="5.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAAAAAAAQAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>PersonCommands.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_manager" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="PersonManagerApp.PersonRepository">
     <Position X="6.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAEAAAgAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAEAAEgAAAAAAAAAAAA=</HashCode>
       <FileName>PersonRepository.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -43,7 +46,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="PersonManagerApp.PersonManager">
-    <Position X="7.5" Y="1.75" Width="1.5" />
+    <Position X="8.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAABAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>PersonManager.cs</FileName>
