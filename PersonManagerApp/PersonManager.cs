@@ -2,23 +2,18 @@
 
 namespace PersonManagerApp;
 
-class PersonManager
+class PersonManager : IPersonManager
 {
-    private readonly PersonRepository _repository;
+    private readonly IPersonRepository _irepository;
 
-    public PersonManager()
+    public PersonManager(IPersonRepository irepository)
     {
-        _repository = new PersonRepository();
+        _irepository = irepository;
     }
-
-    //public Person Copy(Person person)
-    //{
-    //    return person;
-    //}
 
     public IQueryable<Person> GetAllAdults()
     {
-        var adults = _repository
+        var adults = _irepository
             .Query()
             .Where(p => p.Age >= 18);
         return adults;
@@ -26,7 +21,7 @@ class PersonManager
 
     public IQueryable<Person> GetAllChildren()
     {
-        var children = _repository
+        var children = _irepository
             .Query()
             .Where(p => p.Age < 18);
         return children;

@@ -2,21 +2,21 @@
 
 namespace PersonManagerApp;
 
-class PersonRepository
+class PersonRepository : IPersonRepository
 {
-    private readonly FileReader _reader;
-    private readonly PersonParser _parser;
+    private readonly IFileReader _ireader;
+    private readonly IPersonParser _iparser;
 
-    public PersonRepository()
+    public PersonRepository(IFileReader ireader, IPersonParser iparser)
     {
-        _reader = new FileReader();
-        _parser = new PersonParser();
+        _ireader = ireader;
+        _iparser = iparser;
     }
 
     public IQueryable<Person> Query()
     {
-        var csvLines = _reader.ReadAllLines("data.csv");
-        var persons = csvLines.Select(line => _parser.Parse(line));
+        var csvLines = _ireader.ReadAllLines("data.csv");
+        var persons = csvLines.Select(line => _iparser.Parse(line));
         return persons.AsQueryable();
     }
 }
